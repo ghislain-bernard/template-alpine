@@ -83,8 +83,8 @@
 
 /*--------------------------------------------------------------------------------------------------------------------*/
 
-body {
-  @media (width < 320px) or (height < 320px) {
+@media (width < 320px) or (height < 320px) {
+  body {
     @apply before:flex before:items-center before:h-full before:justify-center before:text-4xl;
     @apply before:content-['😭'] before:bg-red-400;
 
