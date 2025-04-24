@@ -1,0 +1,57 @@
+doctype html
+//-------------------------------------------- ghislain.bernard@gmail.com --------------------------------------------//
+
+html
+
+  head
+
+    meta(charset='UTF-8')
+    meta(content='width=device-width,initial-scale=1' name='viewport')
+
+    link(href='./favicon.ico' rel='shortcut icon')
+    link(href='./style.css' rel='stylesheet')
+
+    script(defer src='./script.ts' type='module')
+
+    title template
+
+    body(x-data='context(false)')
+      header
+        #header-left
+          a(href='https://alpinejs.dev')
+            img.-mr-1(alt='' src!='img/alpine.webp?as=webp&width=128' style='max-width:128px')
+            | Alpine
+        #header-center
+          span.material-icons-outlined article
+          | TEMPLATE
+        #header-right
+          #toto
+            a(x-on:click='opened=!opened' x-on:click.away='opened=false')
+              img(alt='' src!='img/avatar.webp?as=webp&width=256' style='max-width:256px')
+              | Ghislain
+              span.material-icons-outlined(x-bind:class="opened && 'rotate-180'") arrow_drop_down
+            ul(x-cloak x-show='opened')
+              li
+                a(href='mailto:ghislain.bernard@gmail.com')
+                  img(alt='' src!='img/avatar.webp?as=webp&width=256' style='max-width:256px')
+                  span.material-icons-outlined mail
+                  | ghislain.bernard@gmail.com
+              li
+                a(href='https://github.com/ghislain-bernard')
+                  span.material-icons-outlined link
+                  | Github
+              li
+                a(href='https://www.linkedin.com/in/ghislain-bernard')
+                  span.material-icons-outlined link
+                  | LinkedIn
+      main
+        include index.html
+        p(x-text='opened') -
+      footer
+        #footer-center
+          a(href='https://opensource.org/license/mit')
+            span.material-icons-outlined bookmark
+            | MIT License
+
+//-------------------------------------------- ghislain.bernard@gmail.com --------------------------------------------//
+
