@@ -115,24 +115,13 @@ body {
       }
     }
   }
+}
 
-  & > header {
-    @apply flex items-center justify-between h-12;
-    @apply bg-slate-600 text-slate-200;
-  }
+/*--------------------------------------------------------------------------------------------------------------------*/
 
-  & > main {
-    @apply flex flex-col items-center justify-center grow;
-
-    p {
-      @apply text-4xl md:text-8xl font-semibold;
-    }
-  }
-
-  & > footer {
-    @apply flex items-center justify-center h-12;
-    @apply bg-slate-600 text-slate-200;
-  }
+body > header {
+  @apply flex items-center justify-between h-12;
+  @apply bg-slate-600 text-slate-200;
 }
 
 #header-left {
@@ -145,50 +134,63 @@ body {
   @apply hidden md:flex;
 }
 
-#header-right {
-  div {
-    & > a {
-      @apply pl-1;
+#header-right-menu {
+  @apply block md:relative;
 
-      & > img {
-        @apply rounded-full;
-      }
+  & > a {
+    @apply pl-1;
 
-      & > span {
-        @apply -ml-3 -mr-1;
-      }
+    & > img {
+      @apply rounded-full;
+    }
+
+    & > span {
+      @apply -ml-3 -mr-1;
     }
   }
 
-  div {
-    @apply md:relative block;
+  & > ul {
+    @apply bg-slate-800;
+    @apply absolute left-0 right-auto top-auto w-full flex flex-col items-center justify-center gap-8;
+    height: calc(100% - (var(--spacing) * 24));
 
-    ul {
-      @apply bg-slate-800;
-      @apply absolute left-0 right-auto top-auto w-full flex flex-col items-center justify-center gap-8;
-      height: calc(100% - (var(--spacing) * 24));
+    @apply md:bg-slate-200 md:text-slate-900;
+    @apply md:block md:w-fit md:h-fit md:left-auto md:right-0 md:p-2 md:rounded-lg;
 
-      @apply md:bg-slate-200 md:text-slate-900;
-      @apply md:block md:w-fit md:h-fit md:left-auto md:right-0 md:p-2 md:rounded-lg;
+    & > li {
+      @apply w-full;
 
-      & > li {
-        @apply w-full;
+      & > a {
+        @apply hover:bg-amber-400 hover:text-slate-900;
+        @apply flex items-center justify-center md:justify-end gap-2 pr-2 text-xl font-semibold;
 
-        & > a {
-          @apply hover:bg-amber-400 hover:text-slate-900;
-          @apply flex items-center justify-center md:justify-end gap-2 pr-2 text-xl font-semibold;
+        & > img {
+          @apply h-24 w-24;
+        }
 
-          & > img {
-            @apply h-24 w-24;
-          }
-
-          & > span {
-            @apply text-4xl;
-          }
+        & > span {
+          @apply text-4xl;
         }
       }
     }
   }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body > main {
+  @apply flex flex-col items-center justify-center grow;
+
+  p {
+    @apply text-4xl md:text-8xl font-semibold;
+  }
+}
+
+/*--------------------------------------------------------------------------------------------------------------------*/
+
+body > footer {
+  @apply flex items-center justify-center h-12;
+  @apply bg-slate-600 text-slate-200;
 }
 
 #footer-center {
