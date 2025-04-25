@@ -181,7 +181,7 @@ body > header {
 body > main {
   @apply flex flex-col items-center justify-center grow;
 
-  p {
+  & > p {
     @apply text-4xl md:text-8xl font-semibold;
   }
 }
