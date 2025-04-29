@@ -34,7 +34,6 @@
     "build": "by-node-env",
     "build:development": "parcel build --no-autoinstall --no-optimize --no-source-maps",
     "build:production": "parcel build --no-autoinstall --no-source-maps",
-    "build:test": "parcel build --no-autoinstall --no-source-maps",
     "clean": "rimraf .parcel-cache dist",
     "lint": "eslint --max-warnings=0 src/script.ts",
     "postbuild": "rimraf .parcel-cache",
